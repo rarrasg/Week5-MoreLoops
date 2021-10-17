@@ -25,7 +25,7 @@ namespace DiceGame
                 int cpuRandom = rnd.Next(1, 7);
                 int userRandom = rnd.Next(1, 7);
 
-                Console.WriteLine($"Arvuti viskas {cpuRandom}. Kasutaja viskas {userRandom})");
+                Console.WriteLine($"Arvuti viskas {cpuRandom}. Kasutaja viskas {userRandom}.");
 
                 if (cpuRandom < userRandom)
                 {
@@ -41,15 +41,20 @@ namespace DiceGame
                 {
                     Console.WriteLine("Vise jäi viiki!");
                 }
-            } 
-            if(userScore == 3 && cpuScore != 3)
+            }
+
+            if (userScore > cpuScore)
             {
                 Console.WriteLine("Kasutaja võitis mängu. Palju õnne!");
             }
-            else
+            else if (userScore < cpuScore)
             {
                 Console.WriteLine("Arvuti võitis mängu");
             }
+            else
+            {
+                Console.WriteLine("Mäng jäi viiki");
+            }            
         }
     }
 }
